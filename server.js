@@ -14,9 +14,6 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 const db = require("./app/models");
-// db.sequelize.sync({ force: false }).then(() => {
-//     console.log('Drop and Resync Db');
-// });
 
 app.get("/", (req, res) => {
     res.json({ message: "Hello World." });
