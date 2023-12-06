@@ -1,12 +1,14 @@
 require('dotenv').config()
 
-const express = require("express");
+const express = require('express');
 
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 
-const cors = require("cors");
+const cors = require('cors');
 
 const app = express();
+
+const port = 8000;
 
 app.use(cors());
 
@@ -23,6 +25,21 @@ require('./app/routes/branches.routes')(app);
 require('./app/routes/specialty.routes')(app);
 require('./app/routes/reservation.routes')(app);
 
-app.listen(8000, () => {
-    console.log("Server is running on port 8000.");
+app.listen(port, () => {
+    console.log(`Server is running on ${port}`);
+});
+
+//specialties
+app.use(express.json());
+
+app.post('/data', (req, res) => {
+    const jsonData = req.body;
+
+    console.log('Data JSON yang diterima:', jsonData);
+
+    res.send('Data JSON diterima.');
+});
+
+app.listen(port, () => {
+    console.log(`Server berjalan di http://localhost:${port}`);
 });
