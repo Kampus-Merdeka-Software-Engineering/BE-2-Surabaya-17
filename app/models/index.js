@@ -27,6 +27,6 @@ db.sequelize = sequelize;
 
 db.branch = require("./branch.model.js")(sequelize, Sequelize);
 db.reservation = require("./reservation.model.js")(sequelize, Sequelize);
-db.specialty = require("./specialty.model.js")(sequelize, Sequelize);
+db.specialties = require("./specialties.model.js")(sequelize, Sequelize);
 
 module.exports = db;

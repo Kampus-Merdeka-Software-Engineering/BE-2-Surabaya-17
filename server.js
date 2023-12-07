@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 
 require('./app/routes/branches.routes')(app);
-require('./app/routes/specialty.routes')(app);
+require('./app/routes/specialties.routes')(app);
 require('./app/routes/reservation.routes')(app);
 
 app.listen(port, () => {
