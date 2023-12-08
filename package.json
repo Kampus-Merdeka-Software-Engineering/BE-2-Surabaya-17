@@ -19,5 +19,10 @@
     "mysql2": "^2.2.5",
     "nodemon": "^3.0.2",
     "sequelize": "^6.35.1"
+  },
+  "config": {
+    "production": {
+      "omit": "dev"
+    }
   }
 }
