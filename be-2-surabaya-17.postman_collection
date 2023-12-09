@@ -12,12 +12,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/specialties?limit=10&offset=0",
+					"raw": "http://localhost:3333/api/specialties?limit=10&offset=0",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8000",
+					"port": "3333",
 					"path": [
 						"api",
 						"specialties"
@@ -42,12 +42,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/branches?limit=10&offset=0",
+					"raw": "http://localhost:3333/api/branches?limit=10&offset=0",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8000",
+					"port": "3333",
 					"path": [
 						"api",
 						"branches"
@@ -81,12 +81,12 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/reservations",
+					"raw": "http://localhost:3333/api/reservations",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8000",
+					"port": "3333",
 					"path": [
 						"api",
 						"reservations"
