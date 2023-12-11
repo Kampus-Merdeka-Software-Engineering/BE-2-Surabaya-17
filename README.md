@@ -85,10 +85,15 @@ Sorry we are closed for contributing.
 
 
 **Team**
+
 Meet the passionate team behind La Felicita:
+
 Maraqonitatilla: Project Leader, guiding the overall vision and execution of the project.
+
 Falsha Satria Dwiputra & Putri Hesmalia: Leading the Frontend Development team, crafting the user interface and ensuring a smooth user experience.
+
 Alya Salsabila & Marwan Maulana: Masterminds behind the Back-end Development team, building the robust infrastructure that powers our services.
+
 Affan Nur Afto & Ari Anindya K.: Our dedicated Quality Assurance team, ensuring every aspect of La Felicita delivers the highest standards.
 
 **We invite you to embark on a journey of happiness with La Felicita. Discover the warmth, flavors, and genuine hospitality that await you.**
