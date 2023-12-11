@@ -4,40 +4,20 @@ const prisma = new PrismaClient();
 
 exports.createReservation = async (req, res) => {
     try {
-        const { name, phone, date, time, people, branch, subject } = req.body;
-
-        // Validasi input sebelum membuat reservasi
-        if (!name || !phone || !date || !time || !people || !branch || !subject) {
-            return res.status(400).send({ message: "Semua bidang harus diisi" });
-        }
-
         const newReservation = await prisma.reservation.create({
             data: {
-                name,
-                phone,
-                date,
-                time,
-                people,
-                branch,
-                subject,
-            }
+                name: req.body.name,
+                phone: req.body.phone,
+                date: new Date(req.body.date), // Ubah ke objek Date
+                time: new Date(req.body.time), // Ubah ke objek Date
+                people: req.body.people,
+                branch: req.body.branch,
+                subject: req.body.subject,
+            },
         });
 
-        const obj = {
-            name: newReservation.name,
-            phone: newReservation.phone,
-            date: newReservation.date,
-            time: newReservation.time,
-            people: newReservation.people,
-            branch: newReservation.branch,
-            subject: newReservation.subject,
-        };
-
-        res.status(201).send({ message: "Reservasi berhasil dibuat!", data: obj });
+        res.send({ message: 'Reservation created successfully!', data: newReservation });
     } catch (err) {
-        console.error("Error:", err);
-        res.status(500).send({ message: "Terjadi kesalahan saat membuat reservasi" });
-    } finally {
-        await prisma.$disconnect();
+        res.status(500).send({ message: err.message });
     }
 };
