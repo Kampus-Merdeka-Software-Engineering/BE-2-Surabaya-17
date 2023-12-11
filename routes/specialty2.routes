@@ -1,16 +1,23 @@
-const controller = require("../controllers/specialty2.controller");
+const express = require('express');
+const { PrismaClient } = require('@prisma/client');
 
-module.exports = function (app) {
-    app.use(function (req, res, next) {
-        res.header(
-            "Access-Control-Allow-Headers",
-            "Origin, Content-Type, Accept"
-        );
-        next();
+const prisma = new PrismaClient();
+const router = express.Router();
+
+router.get('/specialties', async (req, res) => {
+  try {
+    const take = req.query.limit ? parseInt(req.query.limit) : 10;
+    const skip = req.query.offset ? parseInt(req.query.offset) : 0;
+
+    const specialties = await prisma.specialty2.findMany({
+      take,
+      skip,
     });
 
-    app.get(
-        "/api/specialties2",
-        controller.getAll
-    );
-};
+    res.send({ message: 'Data fetched successfully!', data: specialties });
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+});
+
+module.exports = router;
