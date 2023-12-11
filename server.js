@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
 require('./routes/branches.routes')(app);
 require('./routes/specialty.routes')(app);
 require('./routes/reservation.routes')(app);
+require('./routes/menu.routes')(app);
 
 // Start server
 app.listen(PORT, () => {
