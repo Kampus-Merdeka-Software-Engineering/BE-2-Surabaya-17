@@ -39,3 +39,14 @@ model Specialties {
 
   @@map("Specialties") 
 }
+
+model Specialties {
+  id         Int       @id @default(autoincrement())
+  name       String    @db.VarChar(255)
+  price      Decimal   @db.Decimal(10, 2)
+  imageURL   String    @db.VarChar(255)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@map("Specialties") 
+}
