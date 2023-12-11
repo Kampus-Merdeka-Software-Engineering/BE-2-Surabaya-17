@@ -7,7 +7,7 @@ exports.getAll = async (req, res) => {
       take: req.query.limit ? parseInt(req.query.limit) : 10,
       skip: req.query.offset ? parseInt(req.query.offset) : 0,
     });
-    res.send({ message: 'Data fetched successfully!', data: specialties });
+    res.send({ message: 'Data fetched successfully!', data: menu });
   } catch (err) {
     res.status(500).send({ message: err.message });
   }
