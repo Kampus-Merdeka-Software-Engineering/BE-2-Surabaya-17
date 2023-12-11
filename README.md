@@ -14,42 +14,75 @@
 Essential:**
 
 Node.js: Open-source, cross-platform JavaScript runtime environment.
+
 Express.js: Web application framework for Node.js, simplifying server-side development.
+
 MySQL: Open-source relational database management system (RDMS).
+
 Prisma: Powerful open-source ORM (Object-Relational Mapper) enabling efficient database interaction with Node.js applications.
+
 Optional:
+
 
 **Development Setup**
 Clone this repository:
+
 Bash
+
 git clone [https://github.com/your-username/La-Felicita-Backend.git](https://github.com/Kampus-Merdeka-Software-Engineering/BE-2-Surabaya-17.git)
+
 Install dependencies:
+
 Bash
+
 npm install
-Configure the .env file:
+
+**Configure the .env file:**
+
+
 Add database credentials (host, username, password, database name).
+
 Add any additional environment variables required by the application.
-Start the application:
+
+**Start the application:**
+
+
 Bash
+
 npm start
+
 API Documentation
-Comprehensive API documentation is available in the be-2-surabaya-17 postman folder. It covers all available API endpoints and their functionalities with detailed explanations and examples.
+Comprehensive API documentation is available in the be-2-surabaya-17 postman folder. It covers all available API endpoints.
 
 **Development Process**
+
+
 Implement features using Node.js and Express.js.
+
 Utilize Prisma for efficient and type-safe database interaction.
+
 Write unit tests for all back-end functionalities to ensure code quality and functionality.
+
 Adhere to best practices for code quality, security, and maintainability.
+
 Leverage Git for version control to track changes and collaborate effectively.
-Deployment
+
+**Deployment**
+
 
 **La Felicita can be deployed to various cloud platforms, including:**
+
+
 
 Railway: Simple and cost-effective solution for modern applications.
 Specific deployment instructions for each platform will be provided in a separate document.
 
+
+
 **Contributing**
 Sorry we are closed for contributing.
+
+
 
 **Team**
 Meet the passionate team behind La Felicita:
