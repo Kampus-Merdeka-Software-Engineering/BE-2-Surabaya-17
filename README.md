@@ -8,7 +8,7 @@
 
 **Step into a haven of peace and comfort.** Our welcoming atmosphere and friendly service invite you to unwind and embrace the simple pleasures of life. Whether seeking a quiet escape or a vibrant social setting, La Felicita promises an unparalleled taste of Italy. Each visit becomes a memorable journey, transporting you to the heart of Italian flavors and hospitality.
 
-**Across 10 branches in major cities, La Felicita offers an exclusive escape.** Our comfortable spaces and elegant ambiance provide the perfect backdrop for an unforgettable dining experience.
+**Across 8 branches in major cities, La Felicita offers an exclusive escape.** Our comfortable spaces and elegant ambiance provide the perfect backdrop for an unforgettable dining experience.
 
 **Technologies
 Essential:**
@@ -44,6 +44,7 @@ Add database credentials (host, username, password, database name).
 
 Add any additional environment variables required by the application.
 
+
 **Start the application:**
 
 
@@ -66,6 +67,7 @@ Write unit tests for all back-end functionalities to ensure code quality and fun
 Adhere to best practices for code quality, security, and maintainability.
 
 Leverage Git for version control to track changes and collaborate effectively.
+
 
 **Deployment**
 
