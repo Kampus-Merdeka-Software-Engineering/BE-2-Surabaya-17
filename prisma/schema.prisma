@@ -1,42 +1,80 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// Prisma Client is the auto-generated database client
+import { PrismaClient } from '@prisma/client';
 
-generator client {
-  provider = "prisma-client-js"
-}
+// Initialize Prisma Client
+const prisma = new PrismaClient();
 
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-model Branch {
-  id        Int      @id @default(autoincrement())
-  name      String   @unique @db.VarChar(255)
-  city      String   @db.VarChar(255)
-  address   String   @db.VarChar(255)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+// Function to create a new branch
+async function createBranch(city: string, address: string, imageURL: string) {
+  const newBranch = await prisma.branch.create({
+    data: {
+      city,
+      address,
+      imageURL,
+    },
+  });
+  return newBranch;
 }
 
-model Reservation {
-  id          Int      @id @default(autoincrement())
-  name        String   @unique @db.VarChar(255)
-  phone       String   @unique @db.VarChar(255)
-  date        DateTime @db.Date
-  time        DateTime @db.Time
-  people      Int      
-  branch      String   @db.VarChar(255)
-  subject    String   @db.Text
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+// Function to create a new reservation
+async function createReservation(
+  name: string,
+  phone: string,
+  date: Date,
+  time: Date,
+  people: number,
+  branch: string,
+  subject: string
+) {
+  const newReservation = await prisma.reservation.create({
+    data: {
+      name,
+      phone,
+      date,
+      time,
+      people,
+      branch,
+      subject,
+    },
+  });
+  return newReservation;
 }
 
-model Specialties {
-  id         Int      @id @default(autoincrement())
-  name       String   @db.VarChar(255)
-  price      Decimal  @db.Decimal(10,2)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+// Function to create a new specialty
+async function createSpecialty(name: string, price: number, imageURL: string) {
+  const newSpecialty = await prisma.specialties.create({
+    data: {
+      name,
+      price,
+      imageURL,
+    },
+  });
+  return newSpecialty;
 }
 
+// Example usage
+async function example() {
+  // Create a new branch
+  const newBranch = await createBranch('City', 'Address', 'example.jpg');
+  console.log('New Branch:', newBranch);
+
+  // Create a new reservation
+  const newReservation = await createReservation('John Doe', '123456789', new Date(), new Date(), 4, 'Branch Name', 'Subject');
+  console.log('New Reservation:', newReservation);
+
+  // Create a new specialty
+  const newSpecialty = await createSpecialty('Service', 50.00, 'service.jpg');
+  console.log('New Specialty:', newSpecialty);
+}
+
+// Calling the example function
+example()
+  .catch((e) => console.error(e))
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
