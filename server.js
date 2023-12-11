@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
 // Require routes
 require('./routes/branches.routes')(app);
 require('./routes/specialty.routes')(app);
+require('./routes/specialty2.routes')(app);
 require('./routes/reservation.routes')(app);
 
 // Start server
