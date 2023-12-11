@@ -17,14 +17,16 @@ model Branch {
 }
 
 model Reservation {
-  id      Int      @id @default(autoincrement())
-  name    String
-  phone   String
-  time    String
-  date    DateTime
-  people  Int
-  branch  String
-  message String?
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(255)
+  phone      String   @db.VarChar(255)
+  date       DateTime @db.Date
+  time       String
+  people     Int      
+  branch     String   @db.VarChar(255)
+  subject    String   @db.Text
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model Specialties {
