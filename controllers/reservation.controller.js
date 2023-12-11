@@ -8,11 +8,11 @@ exports.createReservation = async (req, res) => {
             data: {
                 name: req.body.name,
                 phone: req.body.phone,
-                date: new Date(req.body.date), // Ubah ke objek Date
-                time: new Date(req.body.time), // Ubah ke objek Date
+                date: new Date(req.body.date),
+                time: req.body.time, // String 
                 people: req.body.people,
                 branch: req.body.branch,
-                subject: req.body.subject,
+                message: req.body.message, // Fieldnya adalah 'message'
             },
         });
 
