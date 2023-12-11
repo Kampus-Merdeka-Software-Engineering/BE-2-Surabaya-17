@@ -14,7 +14,7 @@ exports.getAllSpecialties2 = async (req, res) => {
     const skip = req.query.offset ? parseInt(req.query.offset) : 0;
 
     // Mengambil data spesialisasi dari database menggunakan Prisma
-    const specialties2 = await prisma.specialties2.findMany({
+    const specialties2 = await prisma.specialty2.findMany({ // Menggunakan "specialty2" bukan "specialties2"
       take, // Jumlah data yang diambil
       skip, // Jumlah data yang dilewati sebelum pengambilan data dimulai
     });
